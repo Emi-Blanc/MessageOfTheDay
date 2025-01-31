@@ -7,58 +7,51 @@
     <link rel="stylesheet" href="style.css">   
 </head>
 <body>
-    <h1>Mais qui es-tu ?</h1>
-    <button onclick="drawCard()">Tire ta fabuleuse carte</button>
+    <h1>Message du Jour!</h1>
+    <button onclick="drawCard()">Clique ici</button>
     <div class="card" id="card1"></div>
     <div id="result"></div>
     <div id="description"></div>
     <script>
         const cards = [
-            { name: "Le Bateleur", img: "/assets/images/bateleur.jpeg", description: "Tu es un.e débutant.e qui utilise un chapeau trop grand pour cacher des lapins imaginaires. Tu maîtrises l'art de jongler avec des objets invisibles et vend des potions qui guérissent le mal de chaussettes." },
-            { name: "La Papesse", img: "/assets/images/papesse.jpeg", description: "Tu es la gardienne du grand livre des recettes impossibles, tu prétends que tout peut être cuisiné avec du yaourt et de la farine, même une licorne." },
-            { name: "L'Impératrice", img: "/assets/images/imperatrice.jpeg", description: "Tu es la reine autoproclamée de la procrastination productive, tu peux faire pousser des plantes en plastique juste en les regardant intensément" },
-            { name: "L'Empereur", img: "/assets/images/empereur.jpeg", description: "Tu es connu.e pour sa capacité à donner des ordres aux oreillers, tu as a une armée de coussins qui organise des révoltes à 2h du matin." },
-            { name: "Le Pape", img: "/assets/images/pape.jpeg", description: "Tu es une figure spirituelle de l'Église du Dimanche en Pyjama, tu prêches la sieste sacrée et bénit les tasses de café renversées." },
-            { name: "Les Amoureux", img: "/assets/images/amoureux.jpeg", description: "Tu hésites entre l’amour éternel, une pizza quatre fromages, et un abonnement Netflix. Spoiler : la pizza gagne souvent." },
-            { name: "Le Chariot", img: "/assets/images/chariot.jpeg", description: "Tu es un conducteur.e de char à deux chevaux qui passent leur temps à argumenter sur qui est le plus rapide, tout en oubliant de bouger." },  
-            { name: "La Justice", img: "/assets/images/justice.jpeg", description: "Tu es quelqu'n qui pèse des bananes sur une balance cassée et rend des jugements en lançant une pièce en chocolat." },  
-            { name: "L'Ermite'", img: "/assets/images/ermite.jpeg", description: "Explorateur.e de caves inutilisées, tu crois que ta lampe magique peut trouver des chaussettes perdues, mais elle ne fait que clignoter." },
-            { name: "La Roue de la Fortune", img: "/assets/images/roue.jpeg", description: "Tu es un.e chasseur.se de nuages, tu penses que ton parapluie peut prédire l'avenir, mais il se contente de fuir les éclairs en chantant du jazz." },
-            { name: "La Force", img: "/assets/images/force.jpeg", description: "Tu es un personnage qui murmure des poèmes aux lions, persuadé qu’ils adorent les haïkus sur les légumes verts." },
-            { name: "Le Pendu", img: "/assets/images/pendu.jpeg", description: "Accroché.e par les pieds à un arbre, tu médites sur des questions essentielles comme : Pourquoi dit-on 'Ha Bon' ?" },
-            { name: "La Mort", img: "/assets/images/mort.jpeg", description: "Tu es un cavalier.e enthousiaste qui confond souvent sa faux avec une guitare électrique, jouant du rock métal sur des champs de tournesols." },
-            { name: "Le Diable", img: "/assets/images/diable.jpeg", description: "Tu es un.e meneur.se d’une troupe de mini-démons qui passe son temps à voler des slips et à manger des stylos-bille" },
-            { name: "La Tour", img: "/assets/images/tour.jpeg", description: "Tu es une tour qui s’effondre à chaque fois qu’on la regarde de travers, habitée par des oiseaux qui organisent des soirées karaoké." },
-            { name: "L'Etoile", img: "/assets/images/etoile.jpeg", description: "Tu es une danseuse céleste qui pense que jeter de l’eau dans une rivière augmente le niveau de magie dans l’univers." },
-            { name: "La Lune", img: "/assets/images/lune.jpeg", description: "Tu es ce crabe qui joue ave un loup au Monopoly sous un projecteur géant. Personne ne gagne jamais, mais tout le monde est content." },
-            { name: "Le Soleil", img: "/assets/images/soleil.jpeg", description: "Tu es cet enfant qui coure autour d’un tournesol géant pensant que c’est une piscine chauffée par énergie solaire." },
-            { name: "Le Jugement", img: "/assets/images/jugement.jpeg", description: "Tu es un ange avec un mégaphone qui fait des annonces ridicules, comme ‘Aujourd’hui, c’est la journée mondiale des pets interstellaires !" },
-            { name: "Le Monde", img: "/assets/images/monde.jpeg", description: "Tu es cette danseuse cosmique bien gaulée entourée par quatre créatures bizarres qui fait chier tout le monde parce que tu es trop fraîche." },
-            { name: "Le Fou", img: "/assets/images/mat.jpeg", description: "Tu es un.e vagabond.e qui suit un chien avec une bourse pleine de sable. Il affirme qu’il se dirige vers un endroit où les chaises deviennent des licornes." },
-
+            { name: "Le Bateleur", img: "./assets/images/bateleur.jpeg", description: "Tu es en pleine découverte de tes talents cachés, avec une énergie créative qui ne demande qu’à grandir. Chaque geste est une nouvelle possibilité." },
+            { name: "La Papesse", img: "./assets/images/papesse.jpeg", description: "Tu es une exploratrice de la sagesse, trouvant la paix dans les petits moments et cultivant une sérénité intérieure profonde." },
+            { name: "L'Impératrice", img: "./assets/images/imperatrice.jpeg", description: "Tu es une source de douceur et d'abondance, apportant équilibre et harmonie dans ton environnement. Tu te nourris de petites choses pour grandir." },
+            { name: "L'Empereur", img: "./assets/images/empereur.jpeg", description: "Tu trouves ta force dans la stabilité, dans la création de ton propre ordre, avec calme et réflexion. Tu as une grande capacité à guider les autres avec douceur." },
+            { name: "Le Pape", img: "./assets/images/pape.jpeg", description: "Tu es une lumière qui guide les autres dans la quête de la paix intérieure, avec une sagesse tranquille et un amour inébranlable pour les petits moments." },
+            { name: "Les Amoureux", img: "./assets/images/amoureux.jpeg", description: "L'amour, sous toutes ses formes, est au cœur de ta vie. Tu choisis avec soin ce qui nourrit ton âme et te fais grandir chaque jour." },
+            { name: "Le Chariot", img: "./assets/images/chariot.jpeg", description: "Tu avances avec confiance et détermination, tout en respectant ton rythme et celui des autres. La victoire réside dans l’équilibre, pas dans la vitesse." },  
+            { name: "La Justice", img: "./assets/images/justice.jpeg", description: "L’équité est ta voie. Tu cherches à comprendre les situations sous tous leurs angles, offrant un regard serein et une prise de décision juste." },  
+            { name: "L'Ermite", img: "./assets/images/ermite.jpeg", description: "Le temps seul est une occasion précieuse pour te retrouver. Tu prends du recul pour mieux te comprendre, avec patience et bienveillance." },
+            { name: "La Roue de la Fortune", img: "./assets/images/roue.jpeg", description: "Le mouvement de la vie est constant. Tu acceptes les hauts et les bas avec sérénité, sachant que chaque moment apporte son propre enseignement." },
+            { name: "La Force", img: "./assets/images/force.jpeg", description: "Ta force intérieure est sans égale. Elle ne se manifeste pas dans la conquête, mais dans la douceur et la patience, comme un souffle calme dans une tempête." },
+            { name: "Le Pendu", img: "./assets/images/pendu.jpeg", description: "Parfois, il est nécessaire de voir les choses sous un autre angle. La pause permet la réflexion et la renaissance." },
+            { name: "La Mort", img: "./assets/images/mort.jpeg", description: "La transformation fait partie de la vie. Tu laisses derrière toi ce qui ne te sert plus pour accueillir ce qui te permettra d’évoluer." },
+            { name: "Le Diable", img: "./assets/images/diable.jpeg", description: "Tu reconnais tes chaînes et choisis de les briser. La liberté est dans l’acceptation et dans le pouvoir de transformer ce qui semblait contraignant." },
+            { name: "La Tour", img: "./assets/images/tour.jpeg", description: "Même les structures les plus solides doivent parfois s'effondrer pour permettre un renouveau. Le changement est un terrain fertile pour la croissance." },
+            { name: "L'Etoile", img: "./assets/images/etoile.jpeg", description: "Tu es guidé.e par l’étoile de l’espoir. Chaque pas dans l’inconnu est une chance de briller davantage." },
+            { name: "La Lune", img: "./assets/images/lune.jpeg", description: "La lune t'invite à te connecter à ton intuition. L’obscurité n’est qu’un voile derrière lequel se cachent les réponses que tu cherches." },
+            { name: "Le Soleil", img: "./assets/images/soleil.jpeg", description: "Le soleil t’apporte lumière et chaleur. Dans ton cœur, la joie rayonne et répand sa chaleur autour de toi." },
+            { name: "Le Jugement", img: "./assets/images/jugement.jpeg", description: "Tu te lèves avec une nouvelle perspective, prêt.e à embrasser le changement. Le passé fait place à un avenir lumineux et riche de nouvelles possibilités." },
+            { name: "Le Monde", img: "./assets/images/monde.jpeg", description: "Tu fais partie d'un tout, connecté.e à l'univers avec une énergie inépuisable. La paix réside dans l'acceptation de ton rôle unique." },
+            { name: "Le Fou", img: "./assets/images/mat.jpeg", description: "L’aventure t’attend, et tu sautes dedans sans hésiter. Le voyage est un apprentissage constant, où chaque pas est une révélation." },
         ];
-    function drawCard() {
-    // Mélange les cartes et sélectionne une carte au hasard
-    const selectedCard = cards[Math.floor(Math.random() * cards.length)];
 
-    // Met à jour la carte avec son image et son nom
-    const cardElement = document.getElementById("card1");
-    cardElement.style.backgroundImage = `url('${selectedCard.img}')`;
-    cardElement.innerHTML = `<img src="${selectedCard.img}" alt="${selectedCard.name}" style="display:block;">`;
+        function drawCard() {
+            // Mélange les cartes et sélectionne une carte au hasard
+            const selectedCard = cards[Math.floor(Math.random() * cards.length)];
 
-    // Affiche le résultat
-    document.getElementById("result").textContent = `${selectedCard.name}`;
+            // Met à jour la carte avec son image et son nom
+            const cardElement = document.getElementById("card1");
+            cardElement.style.backgroundImage = `url('${selectedCard.img}')`;
+            cardElement.innerHTML = `<img src="${selectedCard.img}" alt="${selectedCard.name}" style="display:block;">`;
 
-    // Affiche la description
-    document.getElementById("description").innerHTML = `<p>${selectedCard.description}</p>`;
-}
-  
-    
-</script>
+            // Affiche le résultat
+            document.getElementById("result").textContent = `${selectedCard.name}`;
+
+            // Affiche la description
+            document.getElementById("description").innerHTML = `<p>${selectedCard.description}</p>`;
+        }
+    </script>
 </body>
 </html>
-
-
-
-
-            
